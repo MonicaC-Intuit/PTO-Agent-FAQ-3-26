@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProConnect Tax – Agent Support FAQ</title>
+<style>
+  :root {
+    --blue:#0077c5;--blue-dk:#004a8f;--blue-lt:#e8f4fd;--gold:#f4b942;
+    --green:#2e7d32;--red:#c62828;--border:#dde1e7;--bg:#f5f6f8;--text:#1a1a2e;--muted:#5a6474;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+  /* HEADER */
+  .hdr{background:linear-gradient(135deg,#004a8f 0%,#0077c5 100%);color:#fff;padding:24px 36px 18px}
+  .hdr h1{font-size:24px;font-weight:700}
+  .hdr p{font-size:13px;opacity:.85;margin-top:4px}
+  .hdr-meta{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
+  .badge{background:rgba(255,255,255,.18);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:600}
+
+  /* CONTROLS */
+  .ctrl{background:#fff;border-bottom:2px solid var(--blue);padding:12px 36px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+  .sw{position:relative;flex:1;min-width:220px}
+  .sw input{width:100%;padding:9px 14px 9px 38px;border:2px solid var(--border);border-radius:7px;font-size:14px;transition:border-color .2s}
+  .sw input:focus{outline:none;border-color:var(--blue)}
+  .sw .si{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted)}
+  .filters{display:flex;gap:6px;flex-wrap:wrap}
+  .fb{padding:6px 12px;border:2px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:12px;color:var(--muted);transition:all .15s;white-space:nowrap}
+  .fb:hover,.fb.on{border-color:var(--blue);background:var(--blue-lt);color:#005a9e;font-weight:600}
+  .cinfo{font-size:12px;color:var(--muted);white-space:nowrap;margin-left:auto}
+
+  /* MAIN */
+  .main{max-width:1060px;margin:0 auto;padding:24px 20px 60px}
+  .sec-hdr{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .sec-hdr::after{content:'';flex:1;height:1px;background:var(--border)}
+
+  /* FAQ ITEM */
+  .fi{background:#fff;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;overflow:hidden;transition:box-shadow .2s}
+  .fi:hover{box-shadow:0 3px 12px rgba(0,0,0,.08)}
+  .fi.top10{border-left:4px solid var(--blue)}
+  .fi.hidden{display:none}
+
+  .fh{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;cursor:pointer;user-select:none}
+  .fh:hover{background:#fafbfc}
+  .rk{background:var(--blue);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .tb{background:var(--gold);color:#5a3e00;border-radius:4px;padding:1px 6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;margin-top:3px}
+  .catb{background:var(--blue-lt);color:#005a9e;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:600;white-space:nowrap}
+  .qw{flex:1}
+  .qq{font-size:14px;font-weight:600;line-height:1.4}
+  .qm{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap}
+  .cv{font-size:16px;color:var(--muted);flex-shrink:0;transition:transform .2s;margin-top:1px}
+  .fi.open .cv{transform:rotate(180deg)}
+
+  .fb2{display:none;padding:0 16px 16px 50px;border-top:1px solid var(--border)}
+  .fi.open .fb2{display:block}
+  .fb2 b{color:var(--blue-dk)}
+  .fb2 ol{margin:8px 0 10px;padding-left:0;list-style:none;counter-reset:st}
+  .fb2 ol li{counter-increment:st;position:relative;padding-left:32px;margin-bottom:8px;font-size:13.5px;line-height:1.6}
+  .fb2 ol li::before{content:counter(st);position:absolute;left:0;top:1px;background:var(--blue);color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .fb2 ul{list-style:none;margin:6px 0 10px;padding:0}
+  .fb2 ul li{padding-left:16px;position:relative;margin-bottom:6px;font-size:13.5px;line-height:1.6}
+  .fb2 ul li::before{content:'•';position:absolute;left:4px;color:var(--blue);font-weight:700}
+  .fb2 p{font-size:13.5px;line-height:1.65;margin-bottom:7px}
+  .note{background:#fff8e1;border-left:3px solid var(--gold);padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;margin:8px 0}
+  .escalate{background:#fce4ec;border-left:3px solid var(--red);padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;margin:8px 0;color:#7b1a2a}
+  .success{background:#e8f5e9;border-left:3px solid var(--green);padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;margin:8px 0}
+
+  .nores{text-align:center;padding:50px 20px;color:var(--muted)}
+  .nores h3{font-size:17px;margin-bottom:8px}
+
+  @media print{.ctrl{display:none}.fb2{display:block!important}.cv{display:none}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>📋 ProConnect Tax — Agent Support FAQ</h1>
+  <p>Compiled from #ptg-pto-elite-support & #pto-tier-2 | For Frontline & Tier 2 Agents | Sept 2024 – Mar 2026</p>
+  <div class="hdr-meta">
+    <span class="badge">⭐ Top 10 Most Common</span>
+    <span class="badge" id="total-badge">120 Total Questions</span>
+    <span class="badge">14 Categories</span>
+    <span class="badge">✅ Verified Resolutions</span>
+  </div>
+</div>
+
+<div class="ctrl">
+  <div class="sw">
+    <span class="si">🔍</span>
+    <input type="text" id="srch" placeholder="Search — e.g. eSignature, TY25, efile, purchase error, NH…" oninput="filter()">
+  </div>
+  <div class="filters" id="filters"></div>
+  <span class="cinfo" id="cinfo"></span>
+</div>
+
+<div class="main">
+  <div id="list"></div>
+  <div class="nores" id="nores" style="display:none">
+    <h3>No results found</h3>
+    <p>Try a different keyword or clear the filter.</p>
+  </div>
+</div>
+
+<script>
+const D=[
+{id:1,t:true,r:1,cat:"Grants & Orders",
+q:"TY25 grants/return credits not showing on the account after purchase",
+tags:["TY25","Grants","OII"],
+a:`<b>Root Cause:</b> Order processed but TY25 grant didn't populate in OII. Usually: asset auto-suspended during auth-hold batch, or order placed during a bulk suspension event.<br><br>
+<ol>
+<li>Check order status in Salesforce. If <b>Auth Hold</b> → payment declined; suspend asset, customer places a new order.</li>
+<li>Order shows <b>Complete</b> but no OII grant → escalate T3 to suspend asset and process a <b>$0 replacement order</b> to regenerate the grant.</li>
+<li>After T3 resolves → customer <b>signs out and back in</b>. Grant should appear.</li>
+<li>Still missing after sign-out/in → escalate T3 for further investigation.</li>
+</ol>
+<div class="note">⚠ When T3 suspends the asset, an automated suspension email is sent. Tell the customer to <b>ignore it</b>.</div>`},
+
+{id:2,t:true,r:2,cat:"E-File",
+q:'"The screen to file your return could not be loaded" — New Hampshire (NH) returns',
+tags:["NH","E-File","State Returns"],
+a:`<b>Root Cause:</b> Invalid NH e-file tag from prior-year proforma.<br><br>
+<ol>
+<li><b>Return has ONLY NH:</b> Go to Profile → add any other state → navigate to File Return tab (loads now) → back to Profile → remove extra state.</li>
+<li><b>Return already has other states:</b> Remove NH from Profile → go to File Return tab → back to Profile → re-add NH.</li>
+</ol>
+<div class="note">After the fix, the File Return tab loads normally. This is a proforma carry-over issue, not a real efile data problem.</div>`},
+
+{id:3,t:true,r:3,cat:"eSignature",
+q:'"Unable to send eSignature request" — full troubleshooting path',
+tags:["eSignature","DocuSign","CAT Tool"],
+a:`<ol>
+<li><b>CAT Tool → "Sync Email with DocuSign."</b> Check activation status.<br>
+  • <b>ActivationSent</b> → resend activation email. Customer checks inbox/spam and clicks link.<br>
+  • <b>Active</b> → Step 2.</li>
+<li>Use <b>"Update Auth for User" widget</b> in CAT → customer signs out/in → retry.</li>
+<li>Corporate email domain? Check for DocuSign <b>EMAIL_IS_RESERVED</b> error → customer contacts DocuSign to un-reserve domain.</li>
+<li>Check for <b>email typo</b> (e.g. .comcom). Use F12 → Network tab → red entry → Response tab for exact DocuSign error.</li>
+<li>Another user on same account CAN send → isolated user issue. Sync/update that specific user via CAT.</li>
+<li>Nothing works → escalate T3 with Auth ID, Realm, and F12 error text.</li>
+</ol>
+<div class="note">⚠ New users must complete DocuSign activation (including 5 free trial envelopes) BEFORE they can send.</div>`},
+
+{id:4,t:true,r:4,cat:"Purchase Error",
+q:'"Something Went Wrong" when making a purchase — diagnosis & fixes',
+tags:["Purchase","Billing","Splunk","Entitlements"],
+a:`<b>Step 1 — Check Splunk for exact error:</b><ul>
+<li><b>Payment Auth Failure / Auth Hold</b> → Bank declining. Try different card, contact bank, or use EFT. T2 can attempt order on backend.</li>
+<li><b>Missing entitlement BUS25 or IND25</b> → Add correct pricing entitlement in SF. Customer refreshes and retries.</li>
+<li><b>postalCode: invalid input/length</b> → Bad zip or special character in billing address or Firm Info. Also check: PMB/suite number on Line 1 instead of Line 2.</li>
+<li><b>Firm name special characters</b> (garbled in SF) → T3 must clean the data.</li>
+<li><b>NSF / Non-Sufficient Funds</b> → Bank blocking; customer resolves with bank or provides new card.</li>
+<li><b>EFT not accepted</b> → Some accounts need a credit card. Have customer try CC.</li>
+</ul>
+<b>Step 2</b> — CCC, incognito, different browser.<br>
+<b>Step 3</b> — If T2 places order successfully: customer signs out/in so user fee updates.<br>
+<b>Step 4</b> — All methods fail → escalate T3 with Splunk error and quote number.
+<div class="note">Intuit employees with promo codes → proorderprocessing@intuit.com.</div>`},
+
+{id:5,t:true,r:5,cat:"eSignature",
+q:'DocuSign activation email not received / showing "ActivationSent" in CAT',
+tags:["eSignature","DocuSign","Activation"],
+a:`<ol>
+<li>CAT Tool → <b>"Sync Email with DocuSign"</b> → locate the user.</li>
+<li>If activation date is old → <b>resend the activation email</b> from CAT.</li>
+<li>Customer checks <b>inbox, spam, junk</b>. The link expires — they need the most recent one.</li>
+<li>After clicking activation link → sign out/in to PTO → retry sending eSignature.</li>
+</ol>
+<div class="note">First-time eSignature users must complete the free 5-envelope trial activation before paid envelopes become available.</div>`},
+
+{id:6,t:true,r:6,cat:"E-File",
+q:'Alabama efile rejection — Form 40 Line 5 wages don\'t match W-2 Box 16',
+tags:["E-File","AL","State Returns","Rejection"],
+a:`<b>Root Cause:</b> Known calculation defect — fix deployed in product release.<br><br>
+<ol>
+<li>Check the filing date. If filed <b>BEFORE the fix release</b> → re-efiling is required.</li>
+<li>Have customer <b>re-efile the return</b>. Updated logic resolves the rejection.</li>
+<li>Re-efiling after fix date still rejects → escalate T3, reference <b>INV-145615</b>.</li>
+</ol>`},
+
+{id:7,t:true,r:7,cat:"EFIN",
+q:'EFIN rejected: "Could not locate a software license currently active for your firm"',
+tags:["EFIN","TY25","License"],
+a:`<b>Root Cause:</b> EFIN verification requires an active TY25 asset. If submitted before purchase or during auth-hold, it rejects.<br><br>
+<ol>
+<li>Verify in OII/SF that a <b>TY25 asset is NOW active</b>.</li>
+<li>No TY25 asset → customer <b>purchases TY25 first</b>, then resubmits.</li>
+<li>TY25 asset confirmed active → customer submits a <b>new EFIN application</b>. Old rejected submission cannot be amended.</li>
+</ol>`},
+
+{id:8,t:true,r:8,cat:"Proforma",
+q:'"Something went wrong" when proforma\'ing from a prior year',
+tags:["Proforma","Returns"],
+a:`<ol>
+<li>Check whether the prior-year return has <b>actual data</b>. Empty returns may fail proforma.</li>
+<li>Verify <b>entitlements and purchase status</b> in SF/OII for both source and destination tax years.</li>
+<li>Clear cache/cookies, try incognito, attempt again.</li>
+<li>Persists → escalate T3 with CAN, Realm, client name, return type, and tax year.</li>
+</ol>`},
+
+{id:9,t:true,r:9,cat:"Intuit Link",
+q:'Intuit Link invite — client receiving error code 25625 when accepting',
+tags:["Intuit Link","Email Blocked"],
+a:`<b>Root Cause:</b> Client's email is blocked in the Intuit system.<br><br>
+<ol>
+<li>Check OII — if client email not found, it's likely blocked.</li>
+<li>Preparer <b>voids the current invite</b> for that email.</li>
+<li>Client provides an <b>alternative email</b> (personal Gmail, Outlook, etc.).</li>
+<li>Resend the Intuit Link invite to new email.</li>
+</ol>
+<div class="escalate">Escalate T3 if alternative email also fails.</div>`},
+
+{id:10,t:true,r:10,cat:"E-File",
+q:'ERO Contact Name error / "Foreign address" diagnostic — EFIN data issue',
+tags:["E-File","EFIN","ERO","Diagnostics"],
+a:`<b>Root Cause:</b> EFIN Application Summary has address issue ("USA" vs "US", missing fields) or Preparer section missing full first/last name.<br><br>
+<ol>
+<li>Check EFIN Application Summary. Country shows <b>USA</b> (not US), or missing fields → customer <b>resubmits EFIN application</b>.</li>
+<li>ERO Contact Name error → Preparers section → ensure ERO has both <b>first AND last name</b>.</li>
+<li>Diagnostics show but data looks correct → have customer <b>attempt efile anyway</b> — some are warnings only.</li>
+<li>After EFIN resubmission and approval → retry efiling.</li>
+</ol>`},
+
+// ── eSignature (continued) ──
+{id:11,cat:"eSignature",q:'DocuSign shows "USER_DOES_NOT_EXIST_IN_SYSTEM"',tags:["eSignature","DocuSign","Auth ID"],
+a:`<b>Root Cause:</b> Auth ID email in PTO doesn't match DocuSign — usually from changing user email on Manage & Invite Users after DocuSign activation.<br><br>
+<ol>
+<li>In CAT "Sync Email with DocuSign" — confirm the email tied to that Auth ID.</li>
+<li>If emails out of sync → T3 must fix the Auth ID email. Have customer invite itocare.</li>
+<li>Once synced → sign out/in and retry eSignature.</li>
+</ol>
+<div class="escalate">Escalate T3 if CAT returns an error when syncing — reference PTOPS-2538.</div>`},
+
+{id:12,cat:"eSignature",q:'"Unable to retrieve email template" / "Unable to perform Action" error on eSignature',tags:["eSignature","DocuSign","Template"],
+a:`<ol>
+<li>Check CAT "Sync Email with DocuSign" — note any error TID when searching the realm.</li>
+<li>Try "Update Auth for User" widget in CAT.</li>
+<li>Customer signs out/in and retries.</li>
+<li>Still failing → T3 escalation required with Auth ID, email, and the TID error from CAT.</li>
+</ol>`},
+
+{id:13,cat:"eSignature",q:'DocuSign "EMAIL_IS_RESERVED" — corporate email domain blocked',tags:["eSignature","DocuSign","Domain"],
+a:`<b>Root Cause:</b> User's company email domain is reserved in DocuSign by a corporate account.<br><br>
+<ol>
+<li>Advise customer to contact <b>DocuSign directly</b> to un-reserve their domain, OR use a personal email for eSignature.</li>
+<li>To use personal email: update the eSign email in CAT "Sync Email with DocuSign" to a non-corporate address → resend activation.</li>
+</ol>`},
+
+{id:14,cat:"eSignature",q:'Customer wants to update/change their eSignature email address',tags:["eSignature","DocuSign","Email Update"],
+a:`<ol>
+<li>CAT Tool → "Sync Email with DocuSign" → update the email to the new address.</li>
+<li>Activation email sent to new address. Customer clicks the link.</li>
+<li>Sign out/in and test.</li>
+</ol>
+<div class="note">If CAT returns an error → escalate T3.</div>`},
+
+{id:15,cat:"eSignature",q:'eSignature purchased but showing 0 balance / not in dashboard',tags:["eSignature","Purchase","Dashboard"],
+a:`<ol>
+<li>In SF/OII, verify order is <b>Complete</b> and envelopes are attached to the account.</li>
+<li>Check eSignature asset quantity in CAT matches the order.</li>
+<li>Customer <b>signs out/in</b> to refresh the eSign dashboard.</li>
+<li>Still wrong → escalate T3 with order number and realm.</li>
+</ol>`},
+
+{id:16,cat:"eSignature",q:'Client failed eSignature KBA (identity verification) — now shows "no match" on retry',tags:["eSignature","KBA","Identity"],
+a:`<b>Root Cause:</b> KBA lockout after failed attempt.<br><br>
+<ol>
+<li>Void the current eSignature request.</li>
+<li>Wait <b>24 hours</b> before resending — KBA has a lockout period.</li>
+<li>Resend new request and advise client to carefully answer KBA using official personal information.</li>
+<li>If client continues to fail KBA → preparer may need to use a <b>paper/wet signature</b>.</li>
+</ol>`},
+
+{id:17,cat:"eSignature",q:'eSignature sends preparer copy (Complete Copy) to client instead of client copy',tags:["eSignature","Print"],
+a:`<b>Answer:</b> PTO always sends the <b>Complete Copy</b> via eSignature. No in-product option exists to change this.<br><br>
+<b>Workaround:</b> Generate a separate Client Copy PDF via Print Settings and send it manually outside the eSignature flow.`},
+
+{id:18,cat:"eSignature",q:'eSignature action dropdown spins but does nothing when viewing completed documents',tags:["eSignature","DocuSign","Browser"],
+a:`<ol>
+<li>Clear cache/cookies, incognito mode, different browser.</li>
+<li>Try viewing completed documents directly on the <b>DocuSign portal</b> (docusign.com) using the same eSign email.</li>
+<li>Persists → escalate T3 with the DocuSign Envelope ID.</li>
+</ol>`},
+
+{id:19,cat:"eSignature",q:'Michigan (MI) return not included in eSignature / MI-8453 not generating',tags:["eSignature","MI"],
+a:`<b>Answer:</b> Michigan does not generate the MI-8453 unless filing MI as a <b>standalone return</b> (not piggybacked with Federal). MI uses the federal Form 4868 for extensions and doesn't have its own extension e-signature form.`},
+
+// ── Purchase / Billing ──
+{id:20,cat:"Purchase Error",q:'Error code EBPI-404-BILL-002 when placing order',tags:["Purchase","Billing","EBPI"],
+a:`<ol>
+<li>Check Splunk for the specific sub-error.</li>
+<li>Have customer try a <b>different card</b> or payment method.</li>
+<li>Check for a suspended/auth-hold order blocking the account.</li>
+<li>Persists → T2 attempts manual order. If that fails → escalate T3.</li>
+</ol>`},
+
+{id:21,cat:"Purchase Error",q:'"Initial order is still being processed" — cannot place new order',tags:["Purchase","Billing","Processing"],
+a:`<b>Root Cause:</b> A pending or unresolved order is blocking new purchases — often because credits were used from a cancelled order that wasn't reconciled.<br><br>
+<ol>
+<li>In SF, review all orders. Look for Pending, Cancelled, or Auth Hold status not reconciled.</li>
+<li>If credits were used from a cancelled order → T3 places a reconciliation order for those used credits.</li>
+<li>Once T3 resolves → customer can place new orders normally.</li>
+<li>Customer signs out/in so user fee updates.</li>
+</ol>`},
+
+{id:22,cat:"Purchase Error",q:'Return credits purchased but customer still prompted to re-purchase on efile',tags:["Purchase","Grants","E-File"],
+a:`<ol>
+<li>SF → verify order status is <b>Complete</b>.</li>
+<li>OII → confirm IND25 or BUS25 credit is attached to the account.</li>
+<li>Customer <b>signs out/in</b> to refresh entitlements.</li>
+<li>Still fails → Splunk for entitlement errors → escalate T3 if grant exists in OII but PTO won't recognize it.</li>
+</ol>`},
+
+{id:23,cat:"Purchase Error",q:'Customer with foreign address cannot place an order online',tags:["Purchase","Foreign Address"],
+a:`<b>Answer:</b> Foreign-address customers cannot complete purchases through the PTO online store (requires US billing address). T2 places the order manually using the customer's card details (via Triton Chat payment token).`},
+
+{id:24,cat:"Purchase Error",q:'Customer received incorrect renewal invoice — $99 instead of $105 user fee',tags:["Purchase","Billing","User Fee","Renewal"],
+a:`<b>Answer:</b> Early renewal emails sent <b>before 5/21/2025</b> showed $99 (incorrect). Correct TY25 user fee is $105. Intuit honors $99 for those invoices.<br>
+<ul>
+<li>Pre-ordered at $105 with a $99 invoice → agent submits a <b>refund request for the $6 difference</b>.</li>
+<li>Invoices dated 5/21/2025 or later → already correct.</li>
+</ul>`},
+
+{id:25,cat:"Purchase Error",q:'User fee ($105) was refunded to customer unexpectedly',tags:["Purchase","Billing","User Fee"],
+a:`<ol>
+<li>In SF, review the order and check if a refund was manually triggered by a previous agent or system process.</li>
+<li>Verify account still has active user access grant in OII.</li>
+<li>If grant is gone and refund occurred → T3 re-activates user access grant.</li>
+<li>If customer still has access but payment was refunded → T2 places a new order for the user fee.</li>
+</ol>`},
+
+// ── Grants & Orders ──
+{id:26,cat:"Grants & Orders",q:'TY25 asset shows Suspended even though order completed and payment went through',tags:["TY25","Grants","Suspended"],
+a:`<b>Root Cause:</b> Payment processed simultaneously with an automated suspension batch. Timing caused suspension despite successful payment.<br><br>
+<ol>
+<li>Confirm order completed and charge is on billing tab.</li>
+<li>T3 re-activates the suspended asset and links it to the completed order.</li>
+<li>Customer signs out/in to restore access.</li>
+</ol>`},
+
+{id:27,cat:"Grants & Orders",q:'TY25 grant missing — order shows Auth Hold status',tags:["TY25","Grants","Auth Hold"],
+a:`<b>Root Cause:</b> Auth Hold = payment declined. Grant won't generate until payment succeeds.<br><br>
+<ol>
+<li>Confirm Auth Hold status in SF.</li>
+<li>T3 disables the license if partially created → customer places a new order with valid payment.</li>
+</ol>`},
+
+{id:28,cat:"Grants & Orders",q:'TY25 pre-order: customer asking when their pre-order will be processed',tags:["TY25","Pre-Order"],
+a:`<b>Answer:</b> Pre-orders are managed by the sales team. If a quote/opportunity exists in SF, T2 can process it directly.<br>
+<ul>
+<li>To <b>cancel a pre-order</b> (e.g., to use employee pricing): confirm eligibility, cancel in SF, create new order with correct pricing.</li>
+</ul>`},
+
+{id:29,cat:"Grants & Orders",q:'Order mismatch — customer ordered X returns but received fewer than expected',tags:["Grants","Orders","Credits"],
+a:`<ol>
+<li>In SF, confirm the specific order and quantities.</li>
+<li>Check OII to see what grants are showing.</li>
+<li>Order and OII don't match → escalate T3 with order number and discrepancy details.</li>
+</ol>`},
+
+// ── E-File (continued) ──
+{id:30,cat:"E-File",q:'Extension rejection: "ReturnTypeCd must match version supported by Modernized e-File" (R0000-004-01)',tags:["E-File","Extension","IRS"],
+a:`<b>Root Cause:</b> EIN is associated with a different entity type at the IRS (e.g., IRS has it as 1120-S but a 1065 is being filed).<br><br>
+<ol>
+<li>Verify with customer what entity type the IRS has on file for their EIN.</li>
+<li>Confirm the return type in PTO matches IRS records.</li>
+<li>Mismatch → customer contacts IRS to correct the entity type. Reference <b>INV-142811</b>.</li>
+</ol>`},
+
+{id:31,cat:"E-File",q:'Georgia (GA) efile payload error — "FormGA500X AmendedIRSChangeIndicator not found"',tags:["E-File","GA","Amended","Payload"],
+a:`<b>Root Cause:</b> The GA Amended box is checked on Profile (leftover from a prior federal rejection) but the return is not an amendment.<br><br>
+<ol>
+<li>Go to Profile tab → GA e-file settings → <b>uncheck the "Amended" box</b>.</li>
+<li>Attempt efile again.</li>
+</ol>
+<div class="note">Always check Profile efile settings after a federal rejection — the amended indicator can carry over incorrectly to states.</div>`},
+
+{id:32,cat:"E-File",q:'Kentucky (KY) estimated payments — efile payload error',tags:["E-File","KY","Estimated Payments"],
+a:`<b>Root Cause:</b> Known defect — PTOPS-2537.<br><br>
+<ol>
+<li>Reference JIRA <b>PTOPS-2537</b>.</li>
+<li><b>Workaround:</b> Create a new KY return from scratch (not a copy) and re-enter estimated payment data.</li>
+<li>If customer can't recreate → advise paper filing the 740-ES vouchers.</li>
+</ol>`},
+
+{id:33,cat:"E-File",q:'"There was a problem fetching your tax return diagnostics" when loading Check Return or File Return tab',tags:["E-File","Diagnostics","Profile"],
+a:`<b>Root Cause:</b> Efile boxes checked for secondary filings (Extensions, Amendments, or Estimates) on the Profile tab — known defect PTOPS-2634.<br><br>
+<ol>
+<li>Go to <b>Profile tab</b> → uncheck any efile boxes for Extensions/Amendments/Estimates.</li>
+<li>Reload the Check Return or File Return tab.</li>
+<li>After reviewing diagnostics, restore the settings as needed.</li>
+</ol>`},
+
+{id:34,cat:"E-File",q:'Maryland (MD) 502 rejection: "Net Maryland Deduction Amount must equal Line 17a minus 17b and 17c"',tags:["E-File","MD","State Returns"],
+a:`<b>Root Cause:</b> Known defect in MD itemized deduction calculation. Fix released in product update.<br><br>
+<ol>
+<li>Check whether customer has filed <b>since the fix release</b>. If not → have them re-efile.</li>
+<li>Rejection persists after re-efile → escalate T3.</li>
+</ol>`},
+
+{id:35,cat:"E-File",q:'Delaware (DE) efile rejection — "Data in the return is missing or invalid" (defect ATC-486584)',tags:["E-File","DE","Defect"],
+a:`<ol>
+<li>Check JIRA for ATC-486584 fix status.</li>
+<li>Check the DE state <b>perfection period</b> — DE may allow additional time.</li>
+<li>If fix not yet released and deadline at risk → advise customer to <b>paper file the DE return</b>.</li>
+</ol>`},
+
+{id:36,cat:"E-File",q:'Form 1041 diagnostic Ref #14166 generating in error (5227-only return)',tags:["E-File","1041","5227","Diagnostic"],
+a:`<b>Root Cause:</b> Diagnostic generates incorrectly on 2024 1041 returns when only Form 5227 is generating. Known defect (ATC-465514).<br><br>
+<b>Resolution:</b> Advise customer to <b>ignore this diagnostic and efile anyway</b>. The return will transmit correctly.`},
+
+{id:37,cat:"E-File",q:'Hawaii (HI) N-40 Diagnostic Ref #40824 — "N-210 must be attached" generating incorrectly',tags:["E-File","HI","1041","Diagnostic"],
+a:`<b>Root Cause:</b> Generating even when N-210 is not generated and Schedule G line 8 is not checked. Known error.<br><br>
+<b>Resolution:</b> Advise customer to <b>ignore and efile anyway</b>. If return rejects → escalate T3, reference ATC-462730.`},
+
+{id:38,cat:"E-File",q:'Utah (UT) TC-40W rejection — withholding ID format error',tags:["E-File","UT","W-2","1099-R"],
+a:`<b>Root Cause:</b> Utah withholding ID must be <b>exactly 11 digits followed by "WTH"</b> (14 characters total).<br><br>
+<ol>
+<li>W-2 or 1099-R input screen → Employer State ID Number field.</li>
+<li>Enter as: <b>XXXXXXXXXXX-WTH</b> (11 numeric digits + WTH). No spaces.</li>
+<li>This auto-populates the TC-40W. Confirm and retry efile.</li>
+</ol>`},
+
+{id:39,cat:"E-File",q:'NY IT-204-LL (SMLLC) efile transmission error / PDF description issue',tags:["E-File","NY","LLC","PDF"],
+a:`<ol>
+<li>Check all PDFs attached. <b>Remove ".pdf" from description fields</b> (e.g., "Statement.pdf" → "Statement").</li>
+<li>Try removing all PDFs and efiling without attachments first.</li>
+<li>Verify correct standalone IT-204-LL filing setup.</li>
+<li>Still failing → escalate T3.</li>
+</ol>`},
+
+{id:40,cat:"E-File",q:'NY IT-370 extension — no e-file payment record generating / TR-579.1-IT',tags:["E-File","NY","Extension","Payment"],
+a:`<b>Answer:</b> The <b>TR-579.1-IT</b> is the NY electronic funds withdrawal form for extensions. It appears in the All Forms view — not the general extension screen.<br>
+<ul>
+<li>Enter the extension payment amount in the NY extension payment input screen to generate the TR-579.1-IT.</li>
+<li>If no TR-579.1-IT generates → customer pays directly through the NY DTF online payment portal.</li>
+</ul>`},
+
+{id:41,cat:"E-File",q:'Efile perfection period — how long after deadline to fix and refile?',tags:["E-File","Perfection Period","Deadline"],
+a:`<ul>
+<li><b>Individual (1040):</b> 5 days to efile corrected return + 5 days to mail = 10 days total.</li>
+<li><b>Corporation:</b> 10 days to efile corrected return.</li>
+</ul>
+Check state-specific perfection periods — some states give additional time beyond federal.`},
+
+{id:42,cat:"E-File",q:'1120-S efile rejection: "Preparer firm information is invalid" / foreign address error',tags:["E-File","1120-S","Preparer","Alternate"],
+a:`<ol>
+<li>Electronic Filing input screen → Alternate Paid Preparer section.</li>
+<li>If return was prepared by the same firm → <b>delete all data in the Alternate Paid Preparer section</b>.</li>
+<li>Client Information → Miscellaneous Info → "Prepared by" dropdown → select the correct option.</li>
+<li>Resubmit the return.</li>
+</ol>`},
+
+// ── Print & Forms ──
+{id:43,cat:"Print & Forms",q:'"Error getting consumption status" when trying to print a return',tags:["Print","Consumption"],
+a:`<ol>
+<li>Customer <b>signs out/in</b> to refresh session.</li>
+<li>Clear cache/cookies, different browser.</li>
+<li>Verify account has active return credits for the tax year in OII/SF.</li>
+<li>Credits exist but error persists → escalate T3.</li>
+</ol>`},
+
+{id:44,cat:"Print & Forms",q:'Customer sees watermark or "Draft Form" — cannot print a clean copy',tags:["Print","Watermark","Draft","Form Availability"],
+a:`<b>Answer:</b> Watermarks appear when a form hasn't been approved by the taxing authority. Cannot be manually removed — requires a product release update.<br><br>
+<ul>
+<li>Monitor form status: <a href="https://form-status.app.intuit.com/tax-forms-availability/formsavailability?product=ProConnect">Tax Form Finder</a></li>
+<li>E-file availability is often ready <b>before</b> print forms — they can often efile even with a watermarked form.</li>
+</ul>`},
+
+{id:45,cat:"Print & Forms",q:'"No permission to print" error despite being Master Admin',tags:["Print","Permissions","OII","Roles"],
+a:`<ol>
+<li>Verify in OII that user's roles include Tax Online (ITO) grant and all print-related roles.</li>
+<li>Try swapping MA role: remove MA → save → add MA back → save → sign out/in → retry.</li>
+<li>Roles look correct but still failing → escalate T3 for backend permission check.</li>
+</ol>`},
+
+{id:46,cat:"Print & Forms",q:'Form available in other software but not in PTO — talking points',tags:["Print","Form Availability"],
+a:`<b>Talking Points:</b>
+<ul>
+<li>Every software vendor develops forms independently. Intuit releases forms only after they're fully approved by the taxing authority to ensure accuracy.</li>
+<li>Monitor status: <a href="https://form-status.app.intuit.com/tax-forms-availability/formsavailability?product=ProConnect">form-status.app.intuit.com</a></li>
+</ul>`},
+
+{id:47,cat:"Print & Forms",q:'Printing a prior-year return — customer told they need to pay / TY25 credit required',tags:["Print","Prior Year","Credits"],
+a:`<b>Answer:</b>
+<ul>
+<li>Previously efiled/printed return → <b>reprinting is free</b>, credits already consumed.</li>
+<li><b>New</b> prior-year return that's never been printed/efiled → TY25 credit required (unless they have leftover TY23/TY24 credits).</li>
+<li>Printing starts once consumption opens — no need to wait for efile.</li>
+</ul>`},
+
+{id:48,cat:"Print & Forms",q:'Ohio (OH) forms with "E-File Only" watermark — cannot print',tags:["OH","Print","Watermark","E-File Only"],
+a:`<b>Answer:</b> Some OH forms (e.g., IT-1041, Schedule of Credits) temporarily have an E-File Only watermark — they can be efiled but not printed until the watermark is removed per the release schedule. Monitor the <a href="https://form-status.app.intuit.com/tax-forms-availability/formsavailability?product=ProConnect">Tax Form Finder</a> for the ETA.`},
+
+// ── Login & Access ──
+{id:49,cat:"Login & Access",q:'Primary Admin locked out — signing into wrong account / two accounts',tags:["Login","Primary Admin","OII"],
+a:`<ol>
+<li>Look up customer in OII using email to identify the <b>correct Support ID</b>.</li>
+<li>Verify correct <b>Auth ID is designated as Primary Admin</b>.</li>
+<li>Send a <b>password reset</b> to the email on that username.</li>
+<li>Try <b>incognito mode</b> to rule out cached credentials.</li>
+<li>Persists → T3 may need to adjust Auth ID or realm associations.</li>
+</ol>`},
+
+{id:50,cat:"Login & Access",q:'Customer\'s username is different from their email address — cannot sign in',tags:["Login","Username","OII"],
+a:`<ol>
+<li>Search OII under <b>Users</b> using the customer's email to find their actual <b>username</b>.</li>
+<li>Provide the username to the customer.</li>
+<li>Send a password reset to the email on file if they forgot the password.</li>
+<li>No results → try searching by CAN or Realm.</li>
+</ol>`},
+
+{id:51,cat:"Login & Access",q:'Account locked due to RPS/Sanctions hold — customer needs to verify account',tags:["Login","RPS","Sanctions"],
+a:`<ol>
+<li>Verification email from AccountVerification@intuit.com should be sent. Have customer check inbox/spam.</li>
+<li>Email not received → request resend via <b>#tmp-sanctions-alert-clearances-support</b> Slack channel.</li>
+<li><b>DO NOT discuss the reason</b> for the hold. Approved talking points: "Intuit conducts compliance checks to ensure a safe platform."</li>
+</ol>
+<div class="escalate">If resend fails or immediate resolution needed → escalate without sharing hold details with customer.</div>`},
+
+{id:52,cat:"Login & Access",q:'New user invited but not receiving invitation email',tags:["Login","Invite","Provisional"],
+a:`<ol>
+<li>Verify in OII that user shows as <b>Provisional</b> (confirms invite was sent).</li>
+<li>Customer checks spam/junk.</li>
+<li>Try <b>deleting the provisional persona</b> from OII and resending the invite.</li>
+<li>Multiple attempts fail → escalate T3 to investigate email delivery.</li>
+</ol>`},
+
+{id:53,cat:"Login & Access",q:'"Need Advanced User Access to add users and clients" error',tags:["Login","User Access","Advanced User"],
+a:`<b>Root Cause:</b> Account is missing the User Access (User Fee) grant for TY25.<br><br>
+<ol>
+<li>Verify in OII/SF whether a TY25 User Access credit was purchased.</li>
+<li>Not purchased → customer buys a TY25 User Access credit in the PTO store.</li>
+<li>After purchasing → sign out/in for access to activate.</li>
+<li>Grant exists but error persists → escalate T3.</li>
+</ol>`},
+
+{id:54,cat:"Login & Access",q:'MFA / 2-Step code not received — carrier outage or non-US number',tags:["Login","MFA","2FA","Carrier"],
+a:`<ol>
+<li>Check PCG Supportability Notifications for carrier outage alerts. If outage (e.g., Verizon) → advise customer to wait.</li>
+<li>Non-US numbers → Intuit MFA may not support international numbers. Set up an <b>authenticator app</b> (Google/Microsoft Authenticator).</li>
+<li>Use a backup code if the customer set those up previously.</li>
+<li>Completely locked out → escalate T3 to manually verify identity and reset 2FA.</li>
+</ol>`},
+
+{id:55,cat:"Login & Access",q:'New customer purchasing PTO for the first time — no CAN, cannot get access',tags:["Login","New Customer","CAN"],
+a:`<b>Answer:</b> A CAN is created when the customer makes their first purchase in PTO. If a realm exists but no CAN:<br>
+<ol>
+<li>Confirm purchase completed and TY25 asset exists on the realm.</li>
+<li>If purchase done but still no CAN → escalate T3. CAN creation should be automatic but sometimes delays occur.</li>
+</ol>`},
+
+// ── Tax Calculations ──
+{id:56,cat:"Tax Calculations",q:'Oregon (OR) 40-N Line 25S — self-employed health insurance deduction not flowing to OR',tags:["Tax Calculations","OR","Self-Employed","Health Insurance"],
+a:`<ol>
+<li>Verify SEHI deduction is correctly entered on the federal side (Schedule C or SEHI screen).</li>
+<li>Check that the income generating the deduction is <b>sourced to Oregon</b> in the multistate sourcing screen.</li>
+<li>For OR-40-N (Nonresident): deduction flows proportionally based on OR-sourced income — no OR income = no deduction.</li>
+<li>Sourcing is correct but still not flowing → send return to T3 for review.</li>
+</ol>`},
+
+{id:57,cat:"Tax Calculations",q:'Oklahoma (OK) Form 511 — K-1 Section 179 showing twice on OK statement',tags:["Tax Calculations","OK","K-1","Section 179"],
+a:`<b>Root Cause:</b> S-Corp K-1 Section 179 flowing from both the federal K-1 screen and a state-specific OK input.<br><br>
+<ol>
+<li>Remove Section 179 amount from the <b>S-Corp K-1 state-specific OK input screen</b>.</li>
+<li>Verify amount flows correctly from federal K-1 alone.</li>
+<li>If removing it clears both entries → likely a known calculation bug → escalate T3.</li>
+</ol>`},
+
+{id:58,cat:"Tax Calculations",q:'California Form 100S / Form 568 — $800 franchise tax not calculating or final year question',tags:["Tax Calculations","CA","LLC","Franchise Tax"],
+a:`<ul>
+<li><b>Final return:</b> CA $800 minimum franchise fee IS charged in the final year — this is by design per CA instructions.</li>
+<li><b>Negative income / $800 not calculating:</b> Check for overrides blocking the fee. The $800 applies regardless of net income.</li>
+<li><b>Form 568 line GG initial return checkbox not checking:</b> Use an override on the CA form to force "Yes."</li>
+</ul>`},
+
+{id:59,cat:"Tax Calculations",q:'Massachusetts (MA) Schedule H — diagnostic about line 2 or 13 not clearing with override',tags:["Tax Calculations","MA","Schedule H","Diagnostic"],
+a:`<ol>
+<li>Navigate to the <b>Massachusetts Income screen</b> (not the Schedule H form view).</li>
+<li>Find the override field for the specific line referenced.</li>
+<li>Enter the exact Schedule B amount in the <b>override field</b>.</li>
+<li>Still not clearing → send return to T3. Reference: MA Ref #54019.</li>
+</ol>`},
+
+{id:60,cat:"Tax Calculations",q:'Estimated payments not flowing to state form — amounts show as "US" instead of state',tags:["Tax Calculations","Estimated Payments","Sourcing"],
+a:`<b>Root Cause:</b> Even on single-state returns, estimated payments may default to "US" sourcing.<br><br>
+<ol>
+<li>Go to <b>Next Year's Estimates tab</b>.</li>
+<li>Check the sourcing dropdown next to each estimate — likely shows "US" instead of state abbreviation.</li>
+<li>Change sourcing to the appropriate <b>state abbreviation</b>.</li>
+<li>Verify amounts now flow to the state estimated payment form.</li>
+</ol>
+<div class="note">Always check sourcing when state estimates aren't showing — this applies even on single-state returns.</div>`},
+
+{id:61,cat:"Tax Calculations",q:'Virginia (VA) amended return — Diagnostic 49240 / 760CG amount mismatch blocking efile',tags:["Tax Calculations","VA","Amended","760CG"],
+a:`<ol>
+<li>On the VA Amended screen, identify where "amount paid with original" is entered.</li>
+<li>Try moving that amount from the VA Amended screen to the <b>Virginia Credits/Payments input screen</b>.</li>
+<li>Verify the 760CG reflects the correct amount and Diagnostic 49240 clears.</li>
+<li>If no clean resolution → advise <b>paper filing the amended return</b>.</li>
+</ol>`},
+
+{id:62,cat:"Tax Calculations",q:'Connecticut (CT) Composite / Pass-Through Entity forms not available near deadline',tags:["Tax Calculations","CT","PTE","Composite"],
+a:`<b>Forms affected:</b> CT-1065, CT-1120SI, CT-PET.<br><br>
+<ul>
+<li>Recommend customers file a <b>CT extension</b> (e-fileable) to avoid penalties while forms are finalized.</li>
+<li>Monitor: <a href="https://form-status.app.intuit.com/tax-forms-availability/formsavailability?product=ProConnect">form-status.app.intuit.com</a></li>
+<li>Refer to the <a href="https://accountants.intuit.com/community/proconnect-tax-news-updates/discussion/connecticut-composite-income-and-pte-form-status-updates-in/00/319436/">PTO News & Updates page</a>.</li>
+</ul>`},
+
+{id:63,cat:"Tax Calculations",q:'Form 8949 — Code R adjustment needed in Column (g) but not generating',tags:["Tax Calculations","8949","Code R","Section 1202"],
+a:`<ol>
+<li>Reference the PTO KB article for Section 1202 QSBS stock and ensure all required inputs are entered per the KB.</li>
+<li>If Code R still not generating after following the KB → send return to T3. May be a calculation defect.</li>
+</ol>`},
+
+{id:64,cat:"Tax Calculations",q:'Form 7203 only generating for one S-Corp when the return has two similar SCOs',tags:["Tax Calculations","7203","S-Corp","K-1"],
+a:`<ol>
+<li>Verify both SCO K-1s have all required fields populated that trigger Form 7203 (basis, at-risk amounts, etc.).</li>
+<li>Check for subtle differences between the two K-1 setups.</li>
+<li>Both appear identical but only one generates → likely a defect → send return to T3.</li>
+</ol>`},
+
+{id:65,cat:"Tax Calculations",q:'Form 8615 (Kiddie Tax) — Line 5/Line 7 not carrying to Line 12a',tags:["Tax Calculations","8615","Kiddie Tax"],
+a:`<ol>
+<li>Verify parent's return information is correctly linked on Form 8615 input screen.</li>
+<li>Confirm parent's taxable income and filing status are entered correctly.</li>
+<li>Confirm child's unearned income exceeds the threshold.</li>
+<li>Amounts correct but not flowing → send return to T3.</li>
+</ol>`},
+
+{id:66,cat:"Tax Calculations",q:'Form 990 Part VIII rejection — "Line 8c must equal Line 8a minus Line 8b"',tags:["Tax Calculations","990","Nonprofit"],
+a:`<ol>
+<li>Verify 990 Part VIII inputs for lines 8a, 8b, 8c — must follow formula: 8c = 8a - 8b.</li>
+<li>Check Schedule G Part II inputs — Line 3 should flow to Form 990 Part VIII Line 8a Column A.</li>
+<li>If calculation appears correct but still rejects → override Line 8c to force the correct value.</li>
+<li>Override doesn't resolve → escalate T3.</li>
+</ol>`},
+
+{id:67,cat:"Tax Calculations",q:'1041 Form — K-1 Box 11b amounts not flowing / overrides not working',tags:["Tax Calculations","1041","K-1","Fiduciary"],
+a:`<ol>
+<li>Verify Box 11b input is in the correct section of the K-1 input screen.</li>
+<li>Review all active overrides on the return — they can sometimes block normal calculations.</li>
+<li>Check that the income type/code for Box 11b matches what PTO expects.</li>
+<li>Still not flowing → send return to T3 with notes on all active overrides.</li>
+</ol>`},
+
+{id:68,cat:"Tax Calculations",q:'1065 — gross sales not flowing to state apportionment forms for 20+ states',tags:["Tax Calculations","1065","Partnership","Apportionment"],
+a:`<ol>
+<li>Check whether income is set to <b>apportionment vs. allocation</b> for each state. Allocated income doesn't follow apportionment formulas.</li>
+<li>Verify gross receipts are marked for apportionment (not allocated) in state-specific input screens.</li>
+<li>Check apportionment percentages — if 0%, nothing flows.</li>
+<li>Complex multi-state scenario → send return to T3.</li>
+</ol>`},
+
+{id:69,cat:"Tax Calculations",q:'Form 2555 — Foreign Earned Income not picking up income from a specific country',tags:["Tax Calculations","2555","Foreign Income","Physical Presence"],
+a:`<b>Root Cause:</b> Physical Presence Test requires at least <b>330 full days</b> in the foreign country within 12 consecutive months.<br><br>
+<ol>
+<li>Check Form 2555 input — verify the number of days in the country.</li>
+<li>If using Physical Presence test and days are below 330 → exclusion will NOT trigger.</li>
+<li>If using Bona Fide Residence test → verify the qualifying period and residency establishment.</li>
+<li>Don't force the exclusion unless the client actually qualifies.</li>
+</ol>`},
+
+{id:70,cat:"Tax Calculations",q:'1040 wages on Form 1040 not matching total of W-2 Box 1 amounts',tags:["Tax Calculations","1040","W-2","Wages"],
+a:`<ol>
+<li>Check all W-2 inputs — verify each is entered separately with correct Box 1 amount.</li>
+<li>Check for Box 12 codes that might reduce Box 1 (some employer contributions).</li>
+<li>Check for duplicate W-2 entries or W-2 entered under the wrong taxpayer.</li>
+<li>Check for overrides or manual adjustments on the Wages input screen.</li>
+<li>All correct → send return to T3 for analysis.</li>
+</ol>`},
+
+{id:71,cat:"Tax Calculations",q:'NC (North Carolina) non-resident return — D-400 Schedule PN column calculation incorrect',tags:["Tax Calculations","NC","Non-Resident","D-400"],
+a:`<ol>
+<li>Verify K-1 income items are correctly sourced to NC vs. the partner's home state.</li>
+<li>For NC non-resident partners: NC Schedule K-1 Supplemental schedule amounts flow from NC sourcing allocations.</li>
+<li>Calculation appears incorrect after checking sourcing → send return to T3 with expected vs. actual amounts documented.</li>
+</ol>`},
+
+// ── QBO Integration ──
+{id:72,cat:"QBO Integration",q:'QBO client exported to PTO but went to the wrong realm',tags:["QBO","Realm","Client Export"],
+a:`<ol>
+<li>Delete the misrouted client from the incorrect realm in PTO.</li>
+<li>In QBO, remove and re-add accountant access using the <b>correct PTO login</b> (tied to the correct realm).</li>
+<li>Client export will now route to the correct realm.</li>
+</ol>`},
+
+{id:73,cat:"QBO Integration",q:'QBO client invited preparer, creating a separate PTO realm with only that one client',tags:["QBO","Realm","Firm Selection"],
+a:`<b>Answer:</b> A new realm is created when a QBO client invites the preparer as accountant. The preparer will see a Firm Selection screen at login.<br><br>
+<ol>
+<li>Select the <b>primary PTO firm</b> at login.</li>
+<li>To move the client to the primary realm → escalate T3 for realm merge.</li>
+<li>Alternatively: client removes and re-invites the preparer in QBO using the preparer's primary PTO login.</li>
+</ol>`},
+
+{id:74,cat:"QBO Integration",q:'Preparer removed from client\'s QBO — tax client and returns disappeared from PTO',tags:["QBO","Client Access","Returns"],
+a:`<b>Answer:</b> Client and returns disappear when QBO access is removed. They reappear when access is restored.<br><br>
+<ol>
+<li>Confirm whether the client removed the preparer's QBO access.</li>
+<li>If client re-grants access in QBO → client/returns should reappear in PTO automatically.</li>
+<li>Access restored but still missing → sign out/in, wait a few minutes for sync.</li>
+<li>Still missing → escalate T3.</li>
+</ol>`},
+
+{id:75,cat:"QBO Integration",q:'Cannot connect to QBO through PTO — "Red unable to connect" error',tags:["QBO","Connection","Sync"],
+a:`<ol>
+<li>Sign out of both QBO and PTO → sign back into PTO → attempt connection again.</li>
+<li>Try different browser or incognito.</li>
+<li>Verify the QBO account is active and credentials are correct.</li>
+<li>Persists → escalate T3 with PTO Realm and QBO Company ID.</li>
+</ol>`},
+
+{id:76,cat:"QBO Integration",q:'QBO client showing as "Individual" type in PTO after conversion — should be Business',tags:["QBO","Client Type","Data Conversion"],
+a:`<b>Answer:</b> After conversion, the client display type can default to Individual. The return type (e.g., 1065) is set independently.<br>
+<ul>
+<li>The display type may not impact actual return filing if the return type is set correctly in PTO.</li>
+<li>Cannot be changed through agent tools → escalate T3 if causing functional issues.</li>
+</ul>`},
+
+// ── Data Conversion ──
+{id:77,cat:"Data Conversion",q:'UltraTax conversion — "conversion didn\'t recognize files sent" error',tags:["Data Conversion","UltraTax"],
+a:`<ol>
+<li>Confirm backup includes <b>cltlist.wt4</b> (not cltblklist.wt4) in the <b>main conversion folder</b> (not a subfolder).</li>
+<li>File correct but error persists → backup may be corrupted. Have customer invite itocare and we'll attempt to upload directly.</li>
+<li>We also get the error → route to the QuickBase manual conversion queue.</li>
+</ol>`},
+
+{id:78,cat:"Data Conversion",q:'Mac data conversion (TaxAct, TurboTax, other) to PTO',tags:["Data Conversion","Mac","TaxAct"],
+a:`<b>Answer:</b> Mac conversions are <b>manual conversions via QuickBase</b> — the standard portal doesn't support Mac formats.<br><br>
+<ol>
+<li>Route the request to the <b>QuickBase conversion queue</b>.</li>
+<li>A Google Drive invite is sent to the customer's email for file upload.</li>
+<li>Manual conversions take 2–5 business days.</li>
+</ol>`},
+
+{id:79,cat:"Data Conversion",q:'Duplicate Screen disappeared after submitting a second conversion request',tags:["Data Conversion","Duplicates"],
+a:`<b>Answer:</b> The Duplicate Screen temporarily disappears when a new conversion request is submitted. It returns after the current request completes.<br>
+<ul>
+<li>If the screen remains missing after completion → escalate T3 to check conversion status and restore the screen.</li>
+</ul>`},
+
+{id:80,cat:"Data Conversion",q:'Customer wants to export all client data to migrate to a different software',tags:["Data Conversion","Export","Migration"],
+a:`<ol>
+<li>Escalate to T3 to initiate the export. Provide: CAN, Realm, customer email.</li>
+<li>T3 compiles and sends the data export file.</li>
+</ol>
+<div class="note">If migrating to Lacerte — T3 will use the appropriate format. Confirm the target software.</div>`},
+
+// ── Account Management ──
+{id:81,cat:"Account Management",q:'Transfer returns from one CAN to another CAN',tags:["Account Management","Transfer","CAN"],
+a:`<div class="escalate">Always escalate to T3 — agents cannot transfer returns between CANs.</div>
+<b>Provide T3:</b> source CAN, destination CAN, list of returns (or "all"), and customer email.`},
+
+{id:82,cat:"Account Management",q:'Transfer of clients between firms — how to check status',tags:["Account Management","Client Transfer"],
+a:`<ol>
+<li>Look up target CAN in OII/SF to see if transferred clients appear.</li>
+<li>If not appearing after 2+ business days → escalate T3 for status update.</li>
+</ol>`},
+
+{id:83,cat:"Account Management",q:'Two Primary Admins showing / realm merge question',tags:["Account Management","Primary Admin","Realm Merge"],
+a:`<ol>
+<li>In OII, identify the correct Auth ID that should be Primary Admin.</li>
+<li>T2 can change the MA designation in OII.</li>
+<li><b>Realm merges</b> → escalate T3. Provide both Realm IDs and which should be primary.</li>
+</ol>`},
+
+{id:84,cat:"Account Management",q:'Student account — prompted to pay when printing / how to update the realm',tags:["Account Management","Student","Printing"],
+a:`<ol>
+<li>Obtain the student's Realm ID.</li>
+<li>T2 updates the student account realm flag in OII to remove the payment prompt.</li>
+<li>Customer signs out/in and retries printing.</li>
+</ol>`},
+
+{id:85,cat:"Account Management",q:'When is the PTO CAN created if QBOA and PTO are on the same realm?',tags:["Account Management","CAN","QBOA"],
+a:`<b>Answer:</b> A PTO CAN is created when the user first <b>prints or files a return</b> in PTO. It is not created at account setup or at first login.`},
+
+{id:86,cat:"Account Management",q:'Can a deleted return or client be restored?',tags:["Account Management","Delete","Returns"],
+a:`<b>Answer:</b> No — deleted returns and clients are <b>permanently removed</b>. PTO has no recycle bin or undo function. The only option is to re-enter the data manually.`},
+
+{id:87,cat:"Account Management",q:'Client showing as "Sample, Individual" in Client Access list — wrong name after conversion',tags:["Account Management","Client Name","Conversion"],
+a:`<ol>
+<li>Escalate T3 with: CAN, Realm, client's correct name, and any identifiers.</li>
+<li>The issue doesn't affect actual return data — T3 corrects the display name in the Client Access list.</li>
+</ol>`},
+
+{id:88,cat:"Account Management",q:'Preparer sees both PTO and ProSeries firms at login — can they be removed?',tags:["Account Management","Firm Selection","ProSeries"],
+a:`<b>Answer:</b> No — if a user has both ProSeries and PTO under the same Intuit account, both firms appear on the Firm Selection screen. They cannot be merged or hidden through agent tools. The customer selects the correct firm (PTO) at each login.`},
+
+// ── Intuit Link ──
+{id:89,cat:"Intuit Link",q:'Client uploaded documents to Intuit Link but preparer cannot see them',tags:["Intuit Link","Documents"],
+a:`<ol>
+<li>Verify the <b>tax year</b> of the Intuit Link request. Prior-year uploaded documents appear only in that year's folder.</li>
+<li>Have preparer check the <b>correct tax year</b> folder.</li>
+<li>Confirmed uploaded but still not visible → escalate T3.</li>
+</ol>`},
+
+{id:90,cat:"Intuit Link",q:'"Something went wrong" when preparer tries to send an Intuit Link request',tags:["Intuit Link","Error"],
+a:`<ol>
+<li>Clear cache/cookies, incognito, different browser.</li>
+<li>Verify client's email address is valid and not blocked in OII.</li>
+<li>Try closing any existing open requests before sending a new one.</li>
+<li>Persists → escalate T3 with Realm and client email.</li>
+</ol>`},
+
+// ── EFIN ──
+{id:91,cat:"EFIN",q:'EFIN rejection status is "Rejected" but clicking it does nothing / no email received',tags:["EFIN","Rejection","CAT Tool"],
+a:`<ol>
+<li>Check CAT Tool for EFIN submission status and rejection notes.</li>
+<li>Common rejection reasons: address format mismatch, name doesn't match IRS records, missing documentation.</li>
+<li>Correct the identified issue → customer resubmits a new EFIN application.</li>
+</ol>
+<div class="note">CAT EFIN search may require T3 if the tool isn't functioning — submit a ticket to the EFIN team.</div>`},
+
+{id:92,cat:"EFIN",q:'EFIN verification approved but firm name still shows old name (LLC removed)',tags:["EFIN","Firm Name"],
+a:`<ol>
+<li>Have customer sign out/in to refresh firm information after EFIN approval.</li>
+<li>Old name still showing → escalate T3 to manually update the firm name from the new EFIN data.</li>
+</ol>`},
+
+{id:93,cat:"EFIN",q:'Canadian firm with IRS registration — EFIN address showing as Ohio (OH) in PTO',tags:["EFIN","Foreign Address","Canada"],
+a:`<ol>
+<li>Confirm the official EFIN Application Summary shows the correct Canadian address.</li>
+<li>Escalate T3 with the Application Summary and the incorrect address showing in PTO — T3 manually updates the stored address.</li>
+</ol>`},
+
+// ── Misc / How-To ──
+{id:94,cat:"Misc / How-To",q:'Can the customer access PTO for tax years 2013–2016?',tags:["Prior Years","Retired Returns"],
+a:`<b>Answer:</b> TY 2013–2016 have been <b>retired from PTO</b>. ProConnect Star clients can use <b>Lacerte</b> for those years — T2 provides the download links. Non-Star customers: those years are no longer supported in PTO.`},
+
+{id:95,cat:"Misc / How-To",q:'Does 1040ES (estimated taxes) e-file with the 1040X amended return?',tags:["1040X","Estimated Payments","Amended"],
+a:`<b>Answer:</b> No — when efiling a 1040X, <b>only the 1040X itself</b> is transmitted. Federal estimated payments (1040ES) only efile with the original 1040.`},
+
+{id:96,cat:"Misc / How-To",q:'When efiling a 1040X, does the whole return transmit or just the changes?',tags:["1040X","Amended","E-File"],
+a:`<b>Answer:</b> When efiling a 1040X, the <b>entire amended federal return transmits</b> — not just the changed lines. The IRS processes the full corrected return.`},
+
+{id:97,cat:"Misc / How-To",q:'Can mailing labels be created from ProConnect Tax?',tags:["PTO Features","Mailing Labels"],
+a:`<b>Answer:</b> No — PTO does not have a built-in mailing label feature. Customers must generate mailing labels outside of PTO using their client list data.`},
+
+{id:98,cat:"Misc / How-To",q:'Do client Notes in PTO carry over year to year?',tags:["PTO Features","Notes","Year-over-Year"],
+a:`<b>Answer:</b> No — client Notes in PTO do <b>not automatically carry over</b> year to year. The customer must re-enter notes each tax year.`},
+
+{id:99,cat:"Misc / How-To",q:'Can a customer make a partial payment on tax due through PTO?',tags:["Payment","Partial Payment"],
+a:`<b>Answer:</b> PTO only handles efile payment records (electronic funds withdrawal) — it doesn't facilitate direct tax payments. For partial payments:<br>
+<ul>
+<li>Customer pays directly through <b>IRS Direct Pay</b> (irs.gov/directpay) or the state's online payment portal.</li>
+</ul>`},
+
+{id:100,cat:"Misc / How-To",q:'QBI Deduction vs. Optimize QBI in ITA — should the customer use both?',tags:["Tax Calculations","ITA","QBI"],
+a:`<b>Answer:</b>
+<ul>
+<li><b>QBI Deduction:</b> Calculates Section 199A deduction as-is based on current data.</li>
+<li><b>Optimize QBI:</b> Analyzes scenarios to maximize the QBI deduction.</li>
+</ul>
+Using both simultaneously is NOT recommended. If goal is to maximize → use Optimize QBI. Otherwise → use standard QBI Deduction screen.`},
+
+{id:101,cat:"Misc / How-To",q:'Pay by Refund — customer expects an incentive payment but hasn\'t received it',tags:["Pay by Refund","Incentive"],
+a:`<b>Answer:</b> T2 cannot view or process PBR incentives. Direct customer to <b>Refund Advantage</b> or the applicable bank to check their incentive status.`},
+
+{id:102,cat:"Misc / How-To",q:'Pay by Refund — refund amount received differs from expected',tags:["Pay by Refund","Refund","Discrepancy"],
+a:`<ol>
+<li>Check with Refund Advantage for the actual disbursed amount (they deduct their fee before disbursing).</li>
+<li>Significant discrepancy that doesn't match fees → escalate T3 with submission ID and expected vs. actual amounts.</li>
+</ol>`},
+
+{id:103,cat:"Misc / How-To",q:'How to use F12 browser developer tool to diagnose "Something Went Wrong" errors',tags:["Troubleshooting","F12","Developer Tools"],
+a:`<ol>
+<li>Press <b>F12</b> in browser → open Developer Tools.</li>
+<li>Click the <b>Network tab</b>.</li>
+<li>Attempt the failing action (purchase, efile, eSignature, etc.).</li>
+<li>Find the <b>red entry</b> in Network tab → click it → click <b>Response tab</b>.</li>
+<li>Read the full server error message and use it to identify the root cause.</li>
+</ol>
+<div class="success">✅ Works for: purchase errors, print errors, eSignature errors, efile errors — any vague "something went wrong" in PTO.</div>`},
+
+{id:104,cat:"Misc / How-To",q:'How to add a preparer/worker to be able to see a specific client in PTO',tags:["Users","Preparer","Client Access"],
+a:`<ol>
+<li>PTO → Settings → Manage Users and Clients → locate the preparer.</li>
+<li>Add the client to the preparer's client list by editing their access settings.</li>
+<li>For itocare access (T2/T3 troubleshooting): customer invites itocare via Manage Users screen in PTO.</li>
+</ol>`},
+
+{id:105,cat:"Misc / How-To",q:'"+ sign" (expand input) not working in returns for a specific customer but works for agents',tags:["UI","Browser","Input"],
+a:`<ol>
+<li>Clear cache/cookies, incognito, different browser, different device.</li>
+<li>Sign out completely (not just close tab) and sign back in.</li>
+<li>Works for agents but not customer on any device → escalate T3. May be a permissions or session token issue on that Auth ID.</li>
+</ol>`},
+
+{id:106,cat:"Misc / How-To",q:'Customer sees "500 Internal Server Error" when loading PTO',tags:["PTO","Outage","500 Error"],
+a:`<ol>
+<li>Check PCG Supportability Notifications for any active outage alerts.</li>
+<li>Clear cache/cookies and retry.</li>
+<li>Widespread issue (multiple agents/customers) → notify T3 immediately.</li>
+<li>Isolated to one customer → troubleshoot browser/connection first.</li>
+</ol>`},
+
+{id:107,cat:"Misc / How-To",q:'Is Nebraska (NE) state depreciation schedule available in PTO?',tags:["NE","Depreciation","Form Availability"],
+a:`<b>Answer:</b> Nebraska does not have a state-specific depreciation schedule in PTO. The federal Form 4562 will print, but there is no separate NE depreciation schedule — this is a current PTO limitation for Nebraska.`},
+
+{id:108,cat:"Misc / How-To",q:'NYC-EXT extension form not generating — where to find the NYC-UBT extension checkbox',tags:["NYC","Extension","UBT"],
+a:`<ol>
+<li>The NYC-EXT is NOT on the main Extension screen.</li>
+<li>Navigate to: State & Local → New York City → <b>NYC Unincorporated Business Tax (TP) screen</b>.</li>
+<li>Check the <b>"Print extension with return"</b> checkbox to trigger NYC-EXT generation.</li>
+</ol>
+<div class="note">For any special NYC forms — check the specific form's input screen, not the general Extension screen.</div>`},
+
+{id:109,cat:"Misc / How-To",q:'Should Intuit Assist (AI) suggestions be included in troubleshooting?',tags:["Intuit Assist","AI","Troubleshooting"],
+a:`<b>Answer:</b> Yes — Intuit Assist responses can provide valuable insights and KB article references that may help bypass T3 escalation.<br>
+<ul>
+<li>Review suggested steps and try them with the customer.</li>
+<li>Intuit Assist references vetted KB articles and JIRA/INV numbers — worth following up on.</li>
+<li>If Intuit Assist's suggestion doesn't resolve → proceed to T2 escalation as usual.</li>
+</ul>`},
+
+{id:110,cat:"Misc / How-To",q:'Triton Chat payment token — how does the T2 process work for adding customer payment info?',tags:["Billing","Payment Token","Triton Chat","Credit Card"],
+a:`<ol>
+<li>Agent sends customer the payment link in chat. Customer enters card info securely → generates a <b>payment token</b> (agent never sees card number).</li>
+<li>Agent provides the token to T2.</li>
+<li>T2 opens the customer's billing profile in Salesforce → pastes the token into the designated field.</li>
+<li>This automatically populates the new billing info for that profile.</li>
+</ol>
+<div class="escalate">Never ask for card numbers verbally or in writing. Always use the Triton Chat payment token process.</div>`},
+
+{id:111,cat:"Misc / How-To",q:'"Original Letter" vs. "Engagement Letter" in PTO — what\'s the difference?',tags:["Letters","Engagement Letter"],
+a:`<ul>
+<li><b>Engagement Letter:</b> Sent at the <b>beginning of tax season</b> to establish the engagement.</li>
+<li><b>Original Letter:</b> The letter included <b>within the return package</b> (accompanies the filed return).</li>
+</ul>
+To customize the letter sent with the return → modify the Original Letter settings in PTO's letter customization screen.`},
+
+{id:112,cat:"Misc / How-To",q:'NY payload error when efiling — date entered manually instead of using calendar picker',tags:["E-File","NY","Payload","Date","Manual Entry"],
+a:`<b>Root Cause:</b> Certain NY manual entry form date fields (e.g., IT-237) require dates selected via the <b>calendar picker</b>. Typing dates directly causes a payload error.<br><br>
+<ol>
+<li>Go to the manual entry form with the date field.</li>
+<li>Click the <b>calendar icon</b> next to the date field and select the date using the calendar.</li>
+<li>Clear any manually typed date and replace with calendar-selected date.</li>
+<li>Retry efile.</li>
+</ol>`},
+
+{id:113,cat:"Misc / How-To",q:'OH amended return — "Cannot be accepted while original filing status is unknown"',tags:["E-File","OH","Amended"],
+a:`<ol>
+<li>Check the original return's submission status in EFE using the original Sub ID.</li>
+<li>If original shows "Received" or "Accepted" → try efiling the amended return again.</li>
+<li>Original stuck in "Received" for more than 3–5 days → escalate T3 to investigate the original submission.</li>
+</ol>`},
+
+{id:114,cat:"Misc / How-To",q:'"Ghost" checkmarks that cannot be cleared in PTO input fields',tags:["UI","Checkmarks","Browser Bug"],
+a:`<ol>
+<li>Try clicking the red exclamation icon → add the checkmark → uncheck it.</li>
+<li>Try different browser or incognito mode.</li>
+<li>Invite itocare to test whether it's account-specific or browser-specific.</li>
+<li>Persists across all browsers → escalate T3.</li>
+</ol>`},
+
+{id:115,cat:"Misc / How-To",q:'FBAR Form 114 — efile not yet enabled / Texas (TX) efile not yet open',tags:["FBAR","114","TX","E-File"],
+a:`<ul>
+<li><b>FBAR (Form 114):</b> Check the <a href="https://accountants.intuit.com/support/en-us/help-article/electronic-filing/2023-proconnect-tax-tax-e-file-agency-approval/L2Er1cMbO_US_en_US">e-file Agency Approval page</a> for the current opening date. If "eFile not enabled by agency" → agency hasn't opened efile yet.</li>
+<li><b>Texas (TX):</b> TX often opens efile later each season. Monitor the e-file Agency Approval page. TX is in testing when "agency testing" shows.</li>
+</ul>`},
+
+{id:116,cat:"Misc / How-To",q:'Confirmation letter for refund — does it show the bank account info for direct deposit?',tags:["Confirmation Letter","Direct Deposit"],
+a:`<b>Answer:</b> The confirmation letter shows that the refund will be deposited and displays only the <b>masked bank account</b> (last 4 digits) — not the full account number. This is by design for security.`},
+
+{id:117,cat:"Misc / How-To",q:'RI (Rhode Island) SMLLC — is there a single-member LLC option similar to UltraTax?',tags:["RI","SMLLC","LLC"],
+a:`<b>Answer:</b> PTO doesn't have an identical standalone RI SMLLC option. The closest equivalent is checking the <b>SMLLC box on the RI-PTE form</b> within the return to indicate single-member LLC status for Rhode Island.`},
+
+{id:118,cat:"Misc / How-To",q:'Pay by Refund enrollment — can a customer enroll in two banks / how to cancel an enrollment',tags:["Pay by Refund","Billing","Bank Enrollment"],
+a:`<b>Answer:</b> PTO supports only <b>one Pay by Refund bank enrollment per account</b> at a time.<br>
+<ul>
+<li>To cancel: customer contacts the PBR bank <b>directly</b>. No in-product cancellation option.</li>
+<li>After cancellation, customer can enroll with a different bank through PTO.</li>
+</ul>`},
+
+{id:119,cat:"Misc / How-To",q:'Can you sort preparers on the PTO Tax Return Home screen by assignee?',tags:["PTO Features","UI","Preparers"],
+a:`<b>Answer:</b> Sorting by assignee on the Tax Return Home screen has limited native functionality. The customer can use the <b>filter/search options</b> on the Tax Returns screen to filter by assignee or preparer name, but there is no formal "sort by assignee" column as of the current PTO version.`},
+
+{id:120,cat:"Misc / How-To",q:'Can a PTO customer convert a return to TurboTax desktop for a client?',tags:["Data Conversion","TurboTax","Desktop"],
+a:`<b>Answer:</b> ProConnect Tax does not natively support exporting directly to TurboTax Desktop format. If a customer wants to convert a PTO return to TurboTax Desktop format, this is not a supported conversion path — they would need to manually re-enter the information in TurboTax Desktop.`},
+];
+
+// ── RENDER ──
+const cats = [...new Set(D.map(d=>d.cat))].sort();
+let activeCat=null, searchTerm='';
+
+function renderFilters(){
+  const g=document.getElementById('filters');
+  g.innerHTML='<button class="fb on" onclick="setCat(null,this)">All</button>';
+  cats.forEach(c=>{
+    const b=document.createElement('button');
+    b.className='fb'; b.textContent=c;
+    b.onclick=()=>setCat(c,b); g.appendChild(b);
+  });
+}
+
+function setCat(cat,btn){
+  activeCat=cat;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on'); filter();
+}
+
+function filter(){
+  searchTerm=document.getElementById('srch').value.toLowerCase();
+  let v=0;
+  D.forEach(d=>{
+    const el=document.getElementById('faq-'+d.id);
+    const ms=!searchTerm||d.q.toLowerCase().includes(searchTerm)||d.cat.toLowerCase().includes(searchTerm)||(d.tags||[]).some(t=>t.toLowerCase().includes(searchTerm));
+    const mc=!activeCat||d.cat===activeCat;
+    if(ms&&mc){el.classList.remove('hidden');v++;}else el.classList.add('hidden');
+  });
+  document.getElementById('nores').style.display=v===0?'block':'none';
+  document.getElementById('cinfo').textContent=`Showing ${v} of ${D.length} questions`;
+}
+
+function tog(id){document.getElementById('faq-'+id).classList.toggle('open')}
+
+function renderFAQs(){
+  const list=document.getElementById('list');
+  let html='';
+  html+='<div class="sec-hdr">⭐ Top 10 Most Common Issues</div>';
+  D.filter(d=>d.t).sort((a,b)=>a.r-b.r).forEach(d=>{html+=item(d);});
+  html+='<div class="sec-hdr" style="margin-top:24px">📂 Additional Reference Questions</div>';
+  D.filter(d=>!d.t).forEach(d=>{html+=item(d);});
+  list.innerHTML=html;
+  document.getElementById('total-badge').textContent=`${D.length} Total Questions`;
+  document.getElementById('cinfo').textContent=`Showing ${D.length} of ${D.length} questions`;
+}
+
+function item(d){
+  const rk=d.t?`<div class="rk">${d.r}</div>`:'';
+  const tb=d.t?'<span class="tb">Top 10</span>':'';
+  return`<div class="fi ${d.t?'top10':''}" id="faq-${d.id}">
+  <div class="fh" onclick="tog(${d.id})">
+    ${rk}
+    <div class="qw">
+      <div class="qq">${d.q}</div>
+      <div class="qm">${tb}<span class="catb">${d.cat}</span></div>
+    </div>
+    <div class="cv">⌄</div>
+  </div>
+  <div class="fb2">${d.a}</div>
+</div>`;
+}
+
+renderFAQs();
+renderFilters();
+D.filter(d=>d.t).forEach(d=>{document.getElementById('faq-'+d.id).classList.add('open');});
+</script>
+</body>
+</html>
